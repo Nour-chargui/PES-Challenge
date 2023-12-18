@@ -1,0 +1,159 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey, buddy!",
+        "Hello, little friend!",
+        "Hi there! What's up?",
+        "Hi there, how can I make your day awesome?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "Goodbye! Have a fantastic day!",
+        "See you later, alligator!",
+        "Bye! Don't forget to smile!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["You're welcome!", "Anytime, pal!", "My pleasure"]
+    },
+    {
+      "tag": "space_information",
+      "patterns": [
+        "Tell me about space",
+        "Give me space information",
+        "What's in outer space?"
+      ],
+      "responses": [
+        "Space is an incredible expanse! Did you know that space is not completely empty? It's filled with stars, planets, moons, and mysterious dark matter!",
+        "Imagine floating in space and seeing the planets dance around the Sun. Our solar system is just a tiny part of the vast universe, filled with galaxies, nebulae, and black holes!",
+        "Get ready for an interstellar adventure! Stars are like cosmic storytellers, each shining with its own unique tale. And galaxies? They're like cosmic cities where billions of stars live!"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the astronaut break up with his girlfriend before going to space? He needed space!",
+        "How do you throw a space party? You planet!",
+        "Why did the sun go to school? To get a little brighter!"
+      ]
+    },
+    {
+      "tag": "education",
+      "patterns": [
+        "Can you teach me something?",
+        "Tell me a fun fact!",
+        "What is the capital of Tunisia?"
+      ],
+      "responses": [
+        "Sure! The capital of Tunisia is Tunis. Did you know that Tunisia is known for its beautiful beaches and ancient ruins?",
+        "Here's a fun fact: The largest volcano in our solar system is on Mars! It's called Olympus Mons and is about 13.6 miles high!",
+        "Imagine a vast universe with billions of stars! Stars are like cosmic candles, and they come in different sizes and colors. Some stars even have names, like our Sun!"
+      ]
+    },
+    {
+      "tag": "learning_subjects",
+      "patterns": [
+        "What subjects can I learn?",
+        "Tell me about different subjects",
+        "Which subjects are interesting?"
+      ],
+      "responses": [
+        "You can explore amazing subjects like Math, Science, English, History, and even discover new worlds in Geography!",
+        "Subjects are like magical doors to knowledge! Math, Science, English, and many more are waiting for you to dive in!",
+        "Imagine the fun of learning about Math, Science, and other cool subjects! Let's embark on a learning adventure!"
+      ]
+    },
+    {
+      "tag": "learning_tools",
+      "patterns": [
+        "What tools can help me learn?",
+        "Tell me about learning tools",
+        "Which tools are good for studying?"
+      ],
+      "responses": [
+        "Imagine having a superhero toolkit with books, online resources, and educational apps! It's your key to a world of knowledge!",
+        "Your learning adventure toolkit can include books, educational websites, and fun apps. Let's gear up for a fantastic learning journey!",
+        "Exploring different learning tools is like finding treasures on a treasure hunt! Ready for the adventure?"
+      ]
+    },
+    {
+      "tag": "fun_activities",
+      "patterns": [
+        "What fun activities can I do?",
+        "Tell me about cool activities",
+        "I'm bored, suggest something fun!"
+      ],
+      "responses": [
+        "How about creating your own superhero story or drawing a magical creature? Let your imagination soar!",
+        "Let's embark on a creative journey! You can try making a fun craft, solving a puzzle, or even inventing your own game!",
+        "Boredom, be gone! You can have a dance party, tell jokes, or write a short play. The possibilities are endless!"
+      ]
+    },
+    {
+      "tag": "games",
+      "patterns": [
+        "Do you want to play a game?",
+        "Let's play!",
+        "Any fun games to play?"
+      ],
+      "responses": [
+        "Absolutely! How about a quick round of 20 questions? Think of an object, and I'll try to guess it in 20 questions or less!",
+        "Sure thing! Let's play a word association game. I'll say a word, and you respond with the first word that comes to your mind!",
+        "Ready for a challenge? Let's play a riddle game. I'll give you a riddle, and you try to solve it!",
+        "How about testing your math skills? I'll ask you some math questions, and you can try to solve them!"
+      ]
+    },
+    {
+      "tag": "word_association",
+      "patterns": ["*"],
+      "responses": [
+        "Great choice! I'll start. Tree.",
+        "Awesome! My turn. Ocean.",
+        "Nice one! Here's mine. Adventure."
+      ]
+    },
+    {
+      "tag": "math_game",
+      "patterns": [
+        "Let's do some math!",
+        "Math game",
+        "Test my math skills"
+      ],
+      "responses": [
+        "Great! Here's your first math question: What is 5 + 7?",
+        "Get ready for a math challenge! What is 10 * 3?",
+        "Time for some math fun! What is 15 - 8?"
+      ]
+    },
+    {
+      "tag": "math_response",
+      "patterns": ["*"],
+      "responses": [
+        "Good job! You're a math whiz!",
+        "Correct! You've got the hang of it!",
+        "Nice work! Math is fun, isn't it?",
+        "It's okay! Give it another shot."
+      ]
+    }
+  ]
+}
