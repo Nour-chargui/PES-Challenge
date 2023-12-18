@@ -1,0 +1,76 @@
+Code Pie Chart(figure1):
+ 
+# Define robot components and their power consumption
+robot_components <- c("Raspberry Pi 4", "Arduino Uno", "Motors", "Camera", "3.5 TFT LCD Touch Screen", "Speaker")
+power_consumption <- c(5, 0.05, 2, 2.5, 3, 3)
+
+# Create a bar chart
+barplot(robot_components, power_consumption, main="Robot Component Power Consumption", 
+        ylab="Power Consumption (W)", xlab="Robot Component")
+
+# Add data labels to the bars (optional)
+text(robot_components, power_consumption + 0.1, power_consumption, col="black", cex=0.7)
+
+# Rotate the x-axis labels to prevent overlapping (optional)
+xticks(seq_along(robot_components), robot_components, rot=45, ha="right")
+# Create a pie chart
+pie(power_consumption, labels=robot_components, main="Robot Component Power Consumption Distribution", col=rainbow(length(robot_components)))
+
+
+Code Bar Plot(figure4):
+
+# Define the required information
+components <- c("Solar Cells", "Charge Controllers", "Boucliers")
+required <- c(3, 1, 1)  # Replace with the actual numbers needed
+
+# Create a bar plot
+barplot(required, names.arg=components, col=rainbow(length(components)), main="Required Components for Solar-Powered Robot", ylab="Quantity", xlab="Component")
+
+
+Code Bar Plot (Figure 5):
+
+# Define variables
+robot_power_consumption_W <- 15.55
+power_bank_capacity_mAh <- 10000
+power_bank_voltage_V <- 3.7 + 3.7
+solar_cell_voltage_V <- 12
+solar_cell_current_mA <- 150
+solar_cells_count <- 3
+pile_capacity_mAh <- 2500
+pile_voltage_V <- 3.6
+piles_count <- 3
+
+# Calculate total energy consumption during robot work session
+total_energy_consumption_Wh <- robot_power_consumption_W * robot_work_hours
+
+# Calculate total energy capacity for each scenario
+energy_capacity_power_bank <- (power_bank_capacity_mAh * power_bank_voltage_V) / 1000
+energy_capacity_solar_piles <- (solar_cells_count * solar_cell_voltage_V * solar_cell_current_mA * robot_work_hours) / 1000 +
+                               (piles_count * pile_capacity_mAh * pile_voltage_V) / 1000
+
+# Data for the grouped bar chart
+components <- c("Power Bank + Solar Cells", "Piles + Solar Cells")
+energy_capacity <- c(energy_capacity_power_bank, energy_capacity_solar_piles)
+df <- data.frame(Component = components, Energy_Capacity = energy_capacity)
+
+# Bar chart
+barplot(df$Energy_Capacity, names.arg = df$Component, col = c("blue", "orange"),
+        main = "Energy Capacity Comparison",
+        ylab = "Energy Capacity (Wh)", xlab = "Component",
+        border = "white", space = 0.3)
+
+# Add legend
+legend("topright", legend = df$Component, fill = c("blue", "orange"), title = "Components")
+
+
+CodeBar Chart (Figure2)
+# Create a bar chart
+barplot(robot_components, power_consumption, main="Power Consumption of Robot Components", 
+        ylab="Power Consumption (W)", xlab="Robot Component")
+
+# Add data labels to the bars
+text(robot_components, power_consumption + 0.1, power_consumption, col="black", cex=0.7)
+barplot(robot_components, power_consumption, main="Power Consumption of Robot Components", 
+        ylab="Power Consumption (W)", xlab="Robot Component", 
+        barplot.axis = list(axis.text = robot_components, las = 2))
+
