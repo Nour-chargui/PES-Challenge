@@ -3,7 +3,6 @@ import json
 import torch
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
-from sympy import sympify, parse_expr
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -24,11 +23,11 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "Potato"
+bot_name = "Sam"
 print("Let's chat! (type 'quit' to exit)")
 while True:
     sentence = input("You: ")
-    if sentence == "quit":
+    if sentence.lower() == "quit":
         break
 
     sentence = tokenize(sentence)
@@ -44,24 +43,15 @@ while True:
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
 
-    # Check if the model is confident and the tag is not a fallback
-    if prob.item() > 0.75 and tag != "fallback":
+    print(f"Predicted Tag: {tag}, Confidence: {prob.item()}")
+
+    if prob.item() > 0.4:  # Adjust the confidence threshold as needed
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                response = random.choice(intent['responses'])
-                print(f"{bot_name}: {response}")
-
-                # Additional logic for specific game-related responses
-                if tag == "word_association" and "Here's mine." in response:
-                    user_response = input("You: ")
-                    print(f"{bot_name}: Your word: {user_response}")
-                elif tag == "math_game" and "What is" in response:
-                    math_game_parts = response.split(":")
-                    if len(math_game_parts) > 1:
-                        math_game_question = math_game_parts[1].strip()
-                        correct_answer = parse_expr(math_game_question)
-                        print(f"{bot_name}: {math_game_question}")
-                break  # Break after finding the matching intent
+                if tag == "education":
+                    print(f"{bot_name}: {intent['responses'][0]}")  # Select the educational response
+                else:
+                    print(f"{bot_name}: {random.choice(intent['responses'])}")
+                break
     else:
-        # If the tag is a fallback, respond with a generic message
-        print(f"{bot_name}: I'm not sure about that. Let's talk about something else!")
+        print(f"{bot_name}: I do not understand...")
