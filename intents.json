@@ -124,15 +124,6 @@
       ]
     },
     {
-      "tag": "word_association",
-      "patterns": ["*"],
-      "responses": [
-        "Great choice! I'll start. Tree.",
-        "Awesome! My turn. Ocean.",
-        "Nice one! Here's mine. Adventure."
-      ]
-    },
-    {
       "tag": "math_game",
       "patterns": [
         "Let's do some math!",
@@ -143,16 +134,6 @@
         "Great! Here's your first math question: What is 5 + 7?",
         "Get ready for a math challenge! What is 10 * 3?",
         "Time for some math fun! What is 15 - 8?"
-      ]
-    },
-    {
-      "tag": "math_response",
-      "patterns": ["*"],
-      "responses": [
-        "Good job! You're a math whiz!",
-        "Correct! You've got the hang of it!",
-        "Nice work! Math is fun, isn't it?",
-        "It's okay! Give it another shot."
       ]
     }
   ]
