@@ -1,15 +1,13 @@
 import numpy as np
 import random
 import json
-import nltk
-from nltk_utils import bag_of_words, tokenize, stem
+
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-from model import NeuralNet
 
-# Download the 'punkt' resource
-nltk.download('punkt')
+from nltk_utils import bag_of_words, tokenize, stem
+from model import NeuralNet
 
 with open('intents.json', 'r') as f:
     intents = json.load(f)
@@ -55,7 +53,7 @@ for (pattern_sentence, tag) in xy:
 X_train = np.array(X_train)
 y_train = np.array(y_train)
 
-# Hyper-parameters
+# Hyper-parameters 
 num_epochs = 1000
 batch_size = 8
 learning_rate = 0.001
@@ -98,18 +96,21 @@ for epoch in range(num_epochs):
     for (words, labels) in train_loader:
         words = words.to(device)
         labels = labels.to(dtype=torch.long).to(device)
-
+        
         # Forward pass
         outputs = model(words)
+        # if y would be one-hot, we must apply
+        # labels = torch.max(labels, 1)[1]
         loss = criterion(outputs, labels)
-
+        
         # Backward and optimize
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-
+        
     if (epoch+1) % 100 == 0:
         print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+
 
 print(f'final loss: {loss.item():.4f}')
 
